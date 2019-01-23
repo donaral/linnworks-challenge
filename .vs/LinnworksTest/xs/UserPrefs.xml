@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{05E05B6A-7950-4A5E-B8D3-AA4103A5C5FF}|Default">
+  <MonoDevelop.Ide.ItemProperties.LinnworksTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument=".gitignore">
+    <Files>
+      <File FileName="appsettings.Development.json" Line="13" Column="1" />
+      <File FileName="ClientApp/README.md" Line="26" Column="34" />
+      <File FileName=".gitignore" Line="37" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
