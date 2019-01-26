@@ -9,6 +9,7 @@ node_modules
 *.o
 *.so
 
+
 # Packages #
 ############
 *.7z
@@ -25,6 +26,8 @@ node_modules
 *.log
 *.sql
 *.sqlite
+*.json
+*.cache
 
 # OS generated files #
 ######################
