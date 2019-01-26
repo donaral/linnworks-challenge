@@ -25,9 +25,7 @@ describe('App page tests', () => {
       page.token.sendKeys('bccf905c-6592-40f2-8db1-c976791fa40a');
       
       page.submit.click();
-            
-      page.pause(2000);
-      
+                  
       expect(page.pageUrl).toContain('/fetch-category');  
       
     });
