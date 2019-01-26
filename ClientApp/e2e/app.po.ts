@@ -6,6 +6,19 @@ export class AppPage {
   }
 
   getMainHeading() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('.navbar-brand')).getText();
   }
-}
+
+  navigateToLogin() {
+    return browser.get('/login');
+  }
+  
+  token = element(by.id('token'));
+  
+  submit = element(by.css('[type="submit"]'));
+  
+  pageUrl() {   
+    return browser.getCurrentUrl()
+  }  
+
+};
