@@ -5,10 +5,10 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getMainHeading() {
-    return element(by.css('.navbar-brand')).getText();
+  getTitle() {
+    return browser.getTitle();
   }
-
+  
   navigateToLogin() {
     return browser.get('/login');
   }
@@ -20,5 +20,9 @@ export class AppPage {
   pageUrl() {   
     return browser.getCurrentUrl()
   }  
-
+  
+  getMainHeading() {
+    return element(by.css('h1')).getText();
+  }
+ 
 };

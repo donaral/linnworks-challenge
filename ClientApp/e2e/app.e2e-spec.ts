@@ -12,29 +12,37 @@ describe('App page tests', () => {
     it('should have correct heading', () => {
       page.navigateTo();
       
-      expect(page.getMainHeading()).toEqual('Linnworks Test');
+      expect(page.getTitle()).toEqual('LinnworksTest');
       
     });
   
   
-    it('should login succesfully with token', () => {
+    it('should enter token and click submit', () => {
       page.navigateToLogin();
      
       expect(page.token.isPresent()).toBeTruthy();
       
       page.token.sendKeys('bccf905c-6592-40f2-8db1-c976791fa40a');
       
-      page.submit.click();
-                  
-      expect(page.pageUrl).toContain('/fetch-category');  
+      expect(page.submit.isEnabled()).toBeTruthy();
       
+      page.submit.click();
+    
     });
+                      
+    it('should check we are on category page', () => {
+        page.pageUrl()
+          .then(function(url) {
+            expect(url).toContain('/fetch-category');
+          });
+      }, 10000);
 
-    it('should give warning with incorrect token', () => {
 
-    });
+});
+
+
     
 
   
-});
+
 
