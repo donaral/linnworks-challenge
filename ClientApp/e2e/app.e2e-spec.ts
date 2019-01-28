@@ -31,16 +31,41 @@ describe('App page tests', () => {
     });
       
     it('should check we are on category page', () => {
-        page.pageUrl()
+      page.pageUrl()
+        .then(function(url) {
+          expect(url).toContain('/fetch-category');
+        });
+    }, 10000);
+    
+    it('should go to add new category page', () => {
+      
+      expect(page.createNewButton.isDisplayed()).toBeTruthy();
+      
+      page.createNewButton.click();
+      
+      page.pageUrl()
           .then(function(url) {
-            expect(url).toContain('/fetch-category');
+            expect(url).toContain('/add-category');
           });
       }, 10000);
+      
+    it('should add new category', () => {
+      page.catNameField.sendKeys('Brand New Category');
+      
+      page.saveCatButton.click();
+      
+      page.pageUrl()
+        .then(function(url) {
+          expect(url).toContain('/fetch-category');
+        });
+    }, 10000);
+      
+    // check that new category is added to list 
+      
 });
 
+// move url check to seperate fx
+// generate random number for new category name
 
-    
-
-  
 
 
