@@ -102,8 +102,14 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "LinnworksTest:serve"
+            "protractorConfig": "./protractor.conf.js"
+            //"devServerTarget": "LinnworksTest:serve"
+          },
+          "configurations": {
+            "local": {
+              "protractorConfig": "./protractor.conf.js",
+              "devServerTarget": "LinnworksTest:serve:development"
+            }
           }
         },
         "lint": {

@@ -29,15 +29,13 @@ describe('App page tests', () => {
       page.submit.click();
     
     });
-                      
+      
     it('should check we are on category page', () => {
         page.pageUrl()
           .then(function(url) {
             expect(url).toContain('/fetch-category');
           });
       }, 10000);
-
-
 });
 
 
