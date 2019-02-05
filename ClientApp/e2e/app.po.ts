@@ -31,6 +31,34 @@ export class AppPage {
   
   saveCatButton = element(by.css('[type="submit"]'));
   
-  catTable = element.all(by.css('body > app-root > div > div > div.col-sm-9.body-content > app-fetch-category > table > tbody'));
- 
+  getItemCount() {
+    const catRows = element.all('body > app-root > div > div > div.col-sm-9.body-content > app-fetch-category > table > tbody > tr');
+
+        var count = 0;
+          for(var i = 0; i < catRows.length; ++i){
+            if(catRows[i] == 2)
+            count++;
+        }  
+      
+      return count;
+  }
+  
+  randomNumber () {
+    let number = "";
+    let possible = "0123456789";
+  
+    for (let i = 0; i < 5; i++)
+      number += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return number;
+
+  }
+  
+  makeNewCatName () {
+    const newCatName = ('New Category ' +  this.randomNumber());
+    // console.log(newCatName);  
+    return newCatName;
+  
+  }
+  
 };

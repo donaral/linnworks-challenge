@@ -50,17 +50,23 @@ describe('App page tests', () => {
       }, 10000);
       
     it('should add new category', () => {
-      page.catNameField.sendKeys('Brand New Category');
+    
+      page.catNameField.sendKeys(page.makeNewCatName());
       
       page.saveCatButton.click();
       
       page.pageUrl()
-        .then(function(url) {
+          .then(function(url) {
           expect(url).toContain('/fetch-category');
-        });
-    }, 10000);
+          });
+      }, 10000);
+
+    it('should check new category is added', () => {
       
-    // check that new category is added to list 
+      console.log(page.getItemCount());
+      
+      
+    });      
       
 });
 
