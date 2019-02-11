@@ -50,28 +50,15 @@ describe('App page tests', () => {
       }, 10000);
       
     it('should add new category', () => {
-    
-      page.catNameField.sendKeys(page.makeNewCatName());
+          
+      let lastCat = page.newCatName;
+      
+      page.catNameField.sendKeys(lastCat);
       
       page.saveCatButton.click();
       
-      page.pageUrl()
-          .then(function(url) {
-          expect(url).toContain('/fetch-category');
-          });
-      }, 10000);
+      expect(page.lastCategory.getText()).toContain(lastCat);
 
-    it('should check new category is added', () => {
-      
-      console.log(page.getItemCount());
-      
-      
-    });      
+    });
       
 });
-
-// move url check to seperate fx
-// generate random number for new category name
-
-
-
