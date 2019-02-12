@@ -35,7 +35,12 @@ describe('App page tests', () => {
         .then(function(url) {
           expect(url).toContain('/fetch-category');
         });
+        
+      //expect(page.fetchCategory.html()).toContain('table');
+
     }, 10000);
+    
+
     
     it('should go to add new category page', () => {
       
@@ -50,15 +55,30 @@ describe('App page tests', () => {
       }, 10000);
       
     it('should add new category', () => {
-          
-      let lastCat = page.newCatName;
-      
-      page.catNameField.sendKeys(lastCat);
+    
+      page.catNameField.sendKeys(page.newCatName);
       
       page.saveCatButton.click();
       
-      expect(page.lastCategory.getText()).toContain(lastCat);
+      let name = page.lastCategory.getText();
+      
+      expect(this.name).toMatch(page.newCatName);
+
 
     });
+    
+    it('should edit category', () => {
+    
+      page.firstEditCat.click();
+      
+      page.catNameField.sendKeys('edited category name');
+
+      page.saveCatButton.click();
+      
+      let firstCat = page.firstEditCat.getText()
+      
+      expect(firstCat).toEqual('edited category name');
+          
+    }); 
       
 });

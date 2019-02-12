@@ -21,6 +21,8 @@ export class AppPage {
     return browser.getCurrentUrl()
   }  
   
+  fetchCategory = element(by.css('app-fetch-category'));
+  
   getMainHeading() {
     return element(by.css('h1')).getText();
   }
@@ -47,8 +49,10 @@ export class AppPage {
   
   newCatName = ('New Category ' +  this.randomNumber());
   
-  lastCategory = element.all(by.css('tr')).last();
+  lastCategory = element(by.css('tr')).last;
   
-
+  firstEditCat = element(by.css('[ng-reflect-router-link="/category/edit/"]')).first;
+  
+  //firstCatName = element.all(by.css('[ng-reflect-router-link="/category/edit/"]')).first().getText();
   
 };
